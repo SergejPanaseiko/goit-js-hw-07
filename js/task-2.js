@@ -28,23 +28,20 @@ const ulElement = document.querySelector('.gallery');
       ulElement.style.display = 'flex';
       ulElement.style.flexWrap = 'wrap';
       ulElement.style.justifyContent = "center";
+      ulElement.style.gap = "10px 10px";
       ulElement.style.margin = "0 auto";
       ulElement.style.padding = "10px";
       ulElement.style.maxWidth = "500px";
-      ulElement.style.backgroundColor = "#ffa500";
-      ulElement.style.gap = "10px 10px";
-
-      images.forEach(src => {
-        const item = document.createElement('li');
-              item.style.display = 'flex';
-        const img = document.createElement('img');
-              img.src = src.url;
-              img.alt = src.alt;
-              img.width = "150";           
-        item.appendChild(img);
-        ulElement.appendChild(item); 
-      });
-
-
-
-
+      ulElement.style.backgroundColor = "#00FF00";
+      ulElement.style.borderRadius = "20px";
+            
+      ulElement.style.listStyle = "none";
+      const liElem = `
+          <li><img src=${images[0].url} alt=${images[0].alt} width="150"></li>
+          <li><img src=${images[1].url} alt=${images[1].alt} width="150"></li>
+          <li><img src=${images[2].url} alt=${images[2].alt} width="150"></li>
+          <li><img src=${images[3].url} alt=${images[3].alt} width="150"></li>
+          <li><img src=${images[4].url} alt=${images[4].alt} width="150"></li>
+          <li><img src=${images[5].url} alt=${images[5].alt} width="150"></li>
+        `
+      ulElement.insertAdjacentHTML('afterbegin',liElem);
