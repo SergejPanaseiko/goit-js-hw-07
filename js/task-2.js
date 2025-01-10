@@ -34,14 +34,10 @@ const ulElement = document.querySelector('.gallery');
       ulElement.style.maxWidth = "500px";
       ulElement.style.backgroundColor = "#00FF00";
       ulElement.style.borderRadius = "20px";
-            
       ulElement.style.listStyle = "none";
-      const liElem = `
-          <li><img src=${images[0].url} alt=${images[0].alt} width="150"></li>
-          <li><img src=${images[1].url} alt=${images[1].alt} width="150"></li>
-          <li><img src=${images[2].url} alt=${images[2].alt} width="150"></li>
-          <li><img src=${images[3].url} alt=${images[3].alt} width="150"></li>
-          <li><img src=${images[4].url} alt=${images[4].alt} width="150"></li>
-          <li><img src=${images[5].url} alt=${images[5].alt} width="150"></li>
-        `
-      ulElement.insertAdjacentHTML('afterbegin',liElem);
+const array = images.map(elem => {
+  return ` <li><img src="${elem.url}" alt="${elem.alt}" width="150"></li>`;}).join('');
+      ulElement.insertAdjacentHTML('afterbegin',array);
+
+
+      
