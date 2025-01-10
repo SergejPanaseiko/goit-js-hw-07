@@ -35,9 +35,9 @@ const ulElement = document.querySelector('.gallery');
       ulElement.style.backgroundColor = "#00FF00";
       ulElement.style.borderRadius = "20px";
       ulElement.style.listStyle = "none";
-const array = images.map(elem => {
+const arrayLi = images.map(elem => {
   return ` <li><img src="${elem.url}" alt="${elem.alt}" width="150"></li>`;}).join('');
-      ulElement.insertAdjacentHTML('afterbegin',array);
+      ulElement.insertAdjacentHTML('afterbegin',arrayLi);
 
 
       
